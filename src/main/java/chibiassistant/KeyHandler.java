@@ -1,4 +1,4 @@
-package main;
+package chibiassistant;
 import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
 public class KeyHandler implements KeyListener{
@@ -28,10 +28,10 @@ public class KeyHandler implements KeyListener{
         if(code == KeyEvent.VK_D){
             rightPressed = true;
         }
-		
-		if(code == KeyEvent.VK_Z){
-			cleanScreen = true;
-		}
+        
+        if(code == KeyEvent.VK_Z){
+            cleanScreen = true;
+        }
     }
 
     @Override
@@ -54,9 +54,9 @@ public class KeyHandler implements KeyListener{
         if(code == KeyEvent.VK_D){
             rightPressed = false;
         }
-		
-		if(code == KeyEvent.VK_Z){
-			cleanScreen = false;
-		}
+        
+        if(code == KeyEvent.VK_Z){
+            cleanScreen = false;
+        }
     }
 }

@@ -1,4 +1,4 @@
-package entity;
+package chibiassistant.entity;
 
 import java.awt.image.BufferedImage;
 

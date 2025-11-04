@@ -1,10 +1,10 @@
-package main;
+package chibiassistant;
 import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Toolkit;
-import entity.Player;
+import chibiassistant.entity.Player;
 public class GamePanel extends JPanel implements Runnable{
     final int originalTileSize = 16;
     final int scale = 3;
@@ -15,15 +15,15 @@ public class GamePanel extends JPanel implements Runnable{
     final int screenHeight = tileSize * maxScreenRow;
     final int FPS = 60;
 
-    KeyHandler keyH = new KeyHandler();
+    KeyHandler input = new KeyHandler();
     Thread gameThread;
-    Player player = new Player(this,keyH);
+    Player player = new Player(this,input);
     public GamePanel(){
         this.setPreferredSize(Toolkit.getDefaultToolkit().getScreenSize());
         this.setBackground(new Color(0, 0, 0, 0));
         this.setOpaque(true);
         this.setDoubleBuffered(true);
-        this.addKeyListener(keyH);
+        this.addKeyListener(input);
         this.setFocusable(true);
     }
 
@@ -45,12 +45,12 @@ public class GamePanel extends JPanel implements Runnable{
             delta += (currentTime - lastTime)/drawInterval;
             lastTime = currentTime;
  
-		if(delta >= 1){
-				update();
-				repaint();
-				delta--;
-			}
-		}
+        if(delta >= 1){
+                update();
+                repaint();
+                delta--;
+            }
+        }
     }
 
     public void update(){
@@ -60,7 +60,7 @@ public class GamePanel extends JPanel implements Runnable{
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
-		player.draw(g2);
+        player.draw(g2);
         g2.dispose();
     }
 }
