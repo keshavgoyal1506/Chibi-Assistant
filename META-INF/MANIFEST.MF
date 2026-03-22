@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: chibiassistant.Main
+Created-By: 26.0.2 (Arch Linux)
+

@@ -25,23 +25,23 @@ public class Player extends Entity{
         direction = "down";
     }
 
-    public void getPlayerImage(){
-        try{
+     public void getPlayerImage(){
+         try{
 
-            up1 = ImageIO.read(getClass().getResourceAsStream("/other/player/chibi_up_1.png"));
-            up2 = ImageIO.read(getClass().getResourceAsStream("/other/player/chibi_up_2.png"));
-            down1 = ImageIO.read(getClass().getResourceAsStream("/other/player/chibi_down_1.png"));
-            down2 = ImageIO.read(getClass().getResourceAsStream("/other/player/chibi_down_2.png"));
-            left1 = ImageIO.read(getClass().getResourceAsStream("/other/player/chibi_left_1.png"));
-            left2 = ImageIO.read(getClass().getResourceAsStream("/other/player/chibi_left_2.png"));
-            right1 = ImageIO.read(getClass().getResourceAsStream("/other/player/chibi_right_1.png"));
-            right2 = ImageIO.read(getClass().getResourceAsStream("/other/player/chibi_right_2.png"));
+             up1 = ImageIO.read(getClass().getResourceAsStream("/assets/player/chibi_up_1.png"));
+             up2 = ImageIO.read(getClass().getResourceAsStream("/assets/player/chibi_up_2.png"));
+             down1 = ImageIO.read(getClass().getResourceAsStream("/assets/player/chibi_down_1.png"));
+             down2 = ImageIO.read(getClass().getResourceAsStream("/assets/player/chibi_down_2.png"));
+             left1 = ImageIO.read(getClass().getResourceAsStream("/assets/player/chibi_left_1.png"));
+             left2 = ImageIO.read(getClass().getResourceAsStream("/assets/player/chibi_left_2.png"));
+             right1 = ImageIO.read(getClass().getResourceAsStream("/assets/player/chibi_right_1.png"));
+             right2 = ImageIO.read(getClass().getResourceAsStream("/assets/player/chibi_right_2.png"));
 
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-    }
+         }
+         catch (IOException e){
+             e.printStackTrace();
+         }
+     }
     
     boolean flag = false, flag2 = false;
 
@@ -80,28 +80,28 @@ public class Player extends Entity{
         
     }
 
-    public void draw(Graphics2D g2) {
-//        g2.setColor(Color.white);
-//        g2.fillRect(x, y, ca.tileSize, ca.tileSize);
-        BufferedImage image = null;
-        switch(direction){
-            case "up":
-                if (spriteNumber)image = up1;
-                else image = up2;
-                break;
-            case "down":
-                if (spriteNumber)image = down1;
-                else image = down2;
-                break;
-            case "right":
-                if (spriteNumber)image = right1;
-                else image = right2;
-                break;
-            case "left":
-                if (spriteNumber)image = left1;
-                else image = left2;
-                break;
-        }
-        g2.drawImage(image, x, y, ca.tileSize, ca.tileSize, null);
-    }
+      public void draw(Graphics2D g2) {
+          //        g2.setColor(Color.white);
+          //        g2.fillRect(x, y, ca.tileSize, ca.tileSize);
+          BufferedImage image = null;
+          switch(direction){
+              case "up":
+                  if (spriteNumber)image = up1;
+                  else image = up2;
+                  break;
+              case "down":
+                  if (spriteNumber)image = down1;
+                  else image = down2;
+                  break;
+              case "right":
+                  if (spriteNumber)image = right1;
+                  else image = right2;
+                  break;
+              case "left":
+                  if (spriteNumber)image = left1;
+                  else image = left2;
+                  break;
+          }
+          g2.drawImage(image, x, y, ca.tileSize, ca.tileSize, null);
+      }
 }
